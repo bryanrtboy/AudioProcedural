@@ -81,13 +81,14 @@ namespace ProceduralAudioTools
 				}
 
 				audioSources [count].clip = m_clips [randClip];
+				audioSources [count].volume = Random.Range (.1f, m_audioLevel);
 
 				if (m_pingPan) {
 
 					if (isLeft)
-						audioSources [randClip].panStereo = -1f;
+						audioSources [count].panStereo = -1f;
 					else
-						audioSources [randClip].panStereo = 1f;
+						audioSources [count].panStereo = 1f;
 
 					isLeft = !isLeft;
 				}
